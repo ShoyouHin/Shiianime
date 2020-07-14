@@ -1,0 +1,266 @@
+<html>
+
+<head>
+    <title>SHIIANIME</title>
+    <style>
+        h1{
+            background-color: black;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            text-align: right;
+            color: white;
+        }
+        h3{
+            text-align: center;
+            font-size: 50px;
+            padding: 5px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        a:link, a:visited {
+            background-color: grey;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        a:hover, a:active {
+            background-color:black;
+        }
+        .row {
+        display: flex;
+        }
+        .left {
+            flex: 25%;
+            padding: 1px 0;
+        }
+        .left h2 {
+            padding-left: 8px;
+        }
+        .right {
+            flex: 75%;
+            padding: 15px;
+        }
+        #mySearch {
+            width: 25%;
+            font-size: 18px;
+            padding: 11px;
+            border: 1px solid #ddd;
+        }
+        #myMenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #myMenu li a {
+            padding: 15px;
+            text-decoration: none;
+            color: black;
+            display: block
+        }
+        #myMenu li a:hover {
+            background-color: #eee;
+        }
+        .navbar{
+            background-color: black;
+        }
+        .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .show {
+            display: block;
+        }
+        .AddProdBtn {
+            background-color: red;
+            color: white;
+            padding: 16px 20px;
+            border: 5px;
+            cursor: pointer;
+            opacity: 0.8;
+            width: 280px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 25px;
+            display: inline;
+        }
+        .sellbtn {
+            background-color: black;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.5;
+            font-size: 20px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        <div class="navbar">
+            <form class="example" action="action_page.php">
+                <a class="active" href="Shiianime.html">Home</a>
+                <a href="Shop.html">Shop</a>
+                <a href="#About">About Us</a>
+                <a href="#Contact">Contact</a>
+                <a href="Cart.html">Cart</a>
+                <div class="dropdown">
+                  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="Me.html">Me</a>
+                      <a href="Settings">Settings</a>
+                    </div>
+                </div>
+                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+            </form>
+        </div>
+    </h1>  
+
+    <h3> ~Posters~ </h3>
+    <div class="row">
+        <div class="left" style="background-color:#bbb;">
+            <h2>Account</h2>
+                <ul id="myAcc">
+                    <form class="example" action="action_page.php">
+                        <button class="sellbtn"><a href="Sell.html" >Sell</a></button>
+                    </form>
+            </ul>
+        </div>
+           
+        <div class="right" style="background-color:#ddd;">
+           <div id="wrapper">
+                <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                                    
+                    <tr id="row1">
+                        <td id="name_row1">One Piece poster</td>
+                        <td id="description_row1"><p>Size: <br>Width: <br> Length:<br></p></td>
+                        <td id="price_row1">P 240.60</td>
+                        <td>
+                            <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                            <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                            <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
+                        </td>
+                    </tr>
+                                                                    
+                        <tr>
+                            <td><input type="text" id="new_name"></td>
+                            <td><input type="text" id="new_description"></td>
+                            <td><input type="text" id="new_price"></td>
+                            <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+                        </tr>        
+                    </table> 
+            </div>
+        </div>
+        
+    </div>
+      
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myAcc");
+            li = ul.getElementsByTagName("li");
+
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        function edit_row(no){
+            document.getElementById("edit_button"+no).style.display="none";
+            document.getElementById("save_button"+no).style.display="block";
+                
+            var name=document.getElementById("name_row"+no);
+            var description=document.getElementById("description_row"+no);
+            var price=document.getElementById("price_row"+no);
+                
+            var name_data=name.innerHTML;
+            var description_data=description.innerHTML;
+            var price_data=price.innerHTML;
+                
+            name.innerHTML="<input type='text' id='name_text"+no+"' value='"+name_data+"'>";
+            description.innerHTML="<input type='text' id='description_text"+no+"' value='"+description_data+"'>";
+            price.innerHTML="<input type='text' id='price_text"+no+"' value='"+price_data+"'>";
+        }
+
+        function save_row(no){
+            var name_val=document.getElementById("name_text"+no).value;
+            var description_val=document.getElementById("description_text"+no).value;
+            var price_val=document.getElementById("price_text"+no).value;
+
+            document.getElementById("name_row"+no).innerHTML=name_val;
+            document.getElementById("description_row"+no).innerHTML=description_val;
+            document.getElementById("price_row"+no).innerHTML=price_val;
+
+            document.getElementById("edit_button"+no).style.display="block";
+            document.getElementById("save_button"+no).style.display="none";
+        }
+
+        function delete_row(no){
+            document.getElementById("row"+no+"").outerHTML="";
+        }
+
+        function add_row(){
+            var new_name=document.getElementById("new_name").value;
+            var new_description=document.getElementById("new_description").value;
+            var new_price=document.getElementById("new_price").value;
+                
+            var table=document.getElementById("data_table");
+            var table_len=(table.rows.length)-1;
+            var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+new_name+"</td><td id='description_row"+table_len+"'>"+new_description+"</td><td id='price_row"+table_len+"'>"+new_price+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+
+            document.getElementById("new_name").value="";
+            document.getElementById("new_description").value="";
+            document.getElementById("new_price").value="";
+        }
+    </script>  
+</body>
+</html>

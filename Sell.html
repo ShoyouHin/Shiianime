@@ -1,180 +1,192 @@
 <html>
 
 <head>
-<style>
-    h1{
-        background-color: black;
-        font-size: 20px;
-        font-family: 'Courier New', Courier, monospace;
-        padding: 10px;
-        text-align: right;
-        color: white;
-    }
-    h3{
-        text-align: center;
-        font-size: 50px;
-        padding: 5px;
-    }
-    * {
-        box-sizing: border-box;
-    }
-    a:link, a:visited {
-        background-color: black;
-        color: white;
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-    a:hover, a:active {
-        background-color:black;
-    }
-    .row {
-        display: flex;
-    }
-   .left {
-        flex: 25%;
-        padding: 1px 0;
-    }
-    .left h2 {
-        padding-left: 8px;
-    }
-    .right {
-        flex: 75%;
-        padding: 15px;
-    }
-    #mySearch {
-        width: 25%;
-        font-size: 18px;
-        padding: 11px;
-        border: 1px solid #ddd;
-    }
-    #myAcc {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    #myAcc li a {
-        padding: 15px;
-        text-decoration: none;
-        color: black;
-        display: block
-    }
-    #myAcc li a:hover {
-        background-color: #eee;
-    }
-    input[type=text], input[type=password] {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
-        display: inline-block;
-        border: none;
-        background: #f1f1f1;
-    }
-    input[type=text]:focus, input[type=password]:focus {
-        background-color: #ddd;
-        outline: none;
-    }
-    .AddProdBtn {
-        background-color: red;
-        color: white;
-        padding: 16px 20px;
-        border: 5px;
-        cursor: pointer;
-        opacity: 0.8;
-        width: 280px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 25px;
-    }
-    * {
-        box-sizing: border-box;
-    }
-    .form-popup {
-        display: none;
-        position: fixed;
-        bottom: 0;
-        right: 15px;
-        border: 3px solid #f1f1f1;
-        z-index: 9;
-    }
-    .form-container {
-        max-width: 300px;
-        padding: 10px;
-        background-color: white;
-    }
-    .form-container .btn {
-        background-color:  grey;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        margin-bottom:10px;
-        opacity: 0.8;
-    }
-    .form-container .Cancel {
-       background-color: red;
-    }
-    .form-container .btn:hover, .open-button:hover {
-        opacity: 1;
-    }
-    .sellbtn {
-        background-color: black;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        opacity: 0.5;
-        font-size: 20px;
-        font-family: monospace;
-    }
-    button:hover {
-        opacity:1;
-    }
-    .navbar{
-        background-color: black;
-    }
-    .dropbtn {
-        font-size: 16px;
-        border: none;
-        outline: none;
-        color: white;
-        padding: 14px 16px;
-        background-color: inherit;
-    }
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-    .dropdown-content a {
-        float: none;
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-    }
-    .dropdown-content a:hover {
-        background-color: #ddd;
-    }
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-    .show {
-        display: block;
-    }
+    <title>SHIIANIME</title>
+    <style>
+        
+        h1{
+            background-color: black;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            text-align: right;
+            color: white;
+        }
+        h3{
+            text-align: center;
+            font-size: 50px;
+            padding: 5px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        #h1 a:link, a:visited {
+            background-color: black;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        #h1 a:hover, a:active {
+            background-color:black;
+        }
+        #h3 a:link, a:visited {
+            background-color: grey;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.5;
+            font-size: 20px;
+            font-family: monospace;
+            display: inline-block;
+        }
+        #h3 a:hover, a:active {
+            background-color:black;
+        }        
+        .row {
+            display: flex;
+        }
+        .left {
+            flex: 25%;
+            padding: 1px 0;
+        }
+        .left h2 {
+            padding-left: 8px;
+        }
+        .right {
+            flex: 75%;
+            padding: 15px;
+        }
+        #mySearch {
+            width: 25%;
+            font-size: 18px;
+            padding: 11px;
+            border: 1px solid #ddd;
+        }
+        #myAcc {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #myAcc li a {
+            padding: 15px;
+            text-decoration: none;
+            color: black;
+            display: block
+        }
+        #myAcc li a:hover {
+            background-color: #eee;
+        }
+        .AddProdBtn {
+            background-color: red;
+            color: white;
+            padding: 16px 20px;
+            border: 5px;
+            cursor: pointer;
+            opacity: 0.8;
+            width: 280px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 25px;
+            display: inline;
+        }
+        #myForm {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .form-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+        .form-container .btn {
+            background-color:  grey;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom:10px;
+            opacity: 0.8;
+        }
+        .form-container .Cancel {
+            background-color: red;
+        }
+        .form-container .btn:hover, .open-button:hover {
+            opacity: 1;
+        }
+        .sellbtn {
+            background-color: black;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.5;
+            font-size: 20px;
+            font-family: monospace;
+        }
+        button:hover {
+            opacity:1;
+        }
+        .navbar{
+            background-color: black;
+        }
+        .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .show {
+            display: block;
+        }
 
-</style>
+    </style>
 </head>
 
 <body>
@@ -182,15 +194,15 @@
     <h1>
         <div class="navbar">
             <form class="example" action="action_page.php">
-                <a class="active" href="C:\Users\Jasmine\Desktop\Shiianime/Shiianime.html">Home</a>
-                <a href="C:\Users\Jasmine\Desktop\Shiianime/Shop.html">Shop</a>
+                <a class="active" href="Shiianime.html">Home</a>
+                <a href="Shop.html">Shop</a>
                 <a href="#About">About Us</a>
                 <a href="#Contact">Contact</a>
-                <a href="C:\Users\Jasmine\Desktop\Shiianime/Cart.html">Cart</a>
+                <a href="Cart.html">Cart</a>
                 <div class="dropdown">
                   <button onclick="myFunction()" class="dropbtn">Dropdown</button>
                     <div id="myDropdown" class="dropdown-content">
-                      <a href="C:\Users\Jasmine\Desktop\Shiianime/Me.html">Me</a>
+                      <a href="Me.html">Me</a>
                       <a href="Settings">Settings</a>
                     </div>
                 </div>
@@ -210,16 +222,18 @@
             </form>
           </ul>
         </div>
-
  
         <button class="AddProdBtn" onclick="openForm()">ADD PRODUCT</button>
 
         <div class="form-popup" id="myForm">
             <form action="/action_page.php" class="form-container">
-                <h1>Add Product From ..</h1>
-                <button type="Camera" class="btn">Camera</button>
-                <button type="Desktop" class="btn">Desktop</button>
-                <button type="Downloads" class="btn">Downloads</button>
+                <h1>Add Product to ..</h1>
+                <button type="button" class="btn"><a href="Keychain.html">Keychain</a></button>
+                <button type="button" class="btn"><a href="Jacket.html">Jacket</a></button>
+                <button type="button" class="btn"><a href="Shirt.html">Shirt</a></button>
+                <button type="button" class="btn"><a href="Poster.html">Poster</a></button>
+                <button type="button" class="btn"><a href="Sticker.html">Sticker</a></button>
+                <button type="button" class="btn"><a href="Manga.html">Manga</a></button>
                 <button type="button" class="btn Cancel" onclick="closeForm()">Cancel</button>
             </form>
         </div>
